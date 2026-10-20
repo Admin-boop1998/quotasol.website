@@ -1,0 +1,88 @@
+/* ===== Quota Solutions — Travel Services Page Design Consistency Fix =====
+ * Makes the travel-services.html page match the main site's dark navy theme
+ * instead of the standalone warm cream design.
+ * Add this ONLY to travel-services.html via:
+ *   <link rel="stylesheet" href="travel-services-fix.css">
+ *   (place AFTER the existing stylesheets)
+ */
+
+/* Override the warm cream background with main site dark theme */
+body {
+  background: #0a1a2f !important;
+  color: #e2e8f0 !important;
+}
+
+/* Match nav to main site nav style */
+nav, .site-nav, header {
+  background: rgba(10,26,47,.95) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255,255,255,.08) !important;
+}
+
+nav a, .site-nav a, .nav-links a {
+  color: #c6d3e2 !important;
+}
+nav a:hover, .site-nav a:hover {
+  color: #fff !important;
+}
+
+/* Override hero background */
+.travel-hero, [class*="hero"], section:first-of-type {
+  background: linear-gradient(135deg, #0a1a2f 0%, #0f2e4a 50%, #0a2540 100%) !important;
+}
+
+/* Fix card backgrounds to dark theme */
+.service-card, [class*="service-card"], .card {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #e2e8f0 !important;
+}
+
+/* Fix form/search widget background */
+.booking-widget, .search-widget, [class*="quote"], form {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #e2e8f0 !important;
+}
+
+input, select, textarea {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: #e2e8f0 !important;
+}
+
+/* CTA buttons match main site accent */
+.btn-primary, [class*="btn-primary"], a[class*="cta"], button[type="submit"] {
+  background: linear-gradient(135deg, #00c48c, #00e0a1) !important;
+  color: #04231a !important;
+}
+
+/* Footer match */
+footer, [class*="foot"] {
+  background: #071320 !important;
+  color: #8ca0b8 !important;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: #fff !important;
+}
+
+/* Breadcrumb */
+.breadcrumb-nav, [class*="breadcrumb"] {
+  color: #8ca0b8 !important;
+}
+.breadcrumb-nav a {
+  color: #8ca0b8 !important;
+}
+
+/* Section dividers */
+section {
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+/* Trust badges / partner section */
+[class*="partner"], [class*="trust"], [class*="badge"] {
+  background: rgba(255,255,255,0.03) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
