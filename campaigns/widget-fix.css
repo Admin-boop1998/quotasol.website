@@ -1,0 +1,66 @@
+/* ===== Quota Solutions — Widget Overlap Fix =====
+ * Prevents WhatsApp/Chat floats from covering forms and CTAs.
+ * Add this to EVERY page via <link rel="stylesheet" href="widget-fix.css">
+ * or paste contents into your existing CSS.
+ */
+
+/* Push floating widgets down and reduce prominence on form-heavy pages */
+.wa-float,
+.chat-launcher,
+.chat-bubble,
+[class*="whatsapp-float"],
+[class*="wa-float"] {
+  z-index: 50 !important;    /* Lower than forms */
+  transition: bottom 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* All forms and conversion elements stay above floats */
+form,
+.calc-card,
+.sub-form,
+.contact-form,
+[id*="quote-form"],
+[class*="form-container"],
+.article-cta,
+.calc-page,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  position: relative;
+  z-index: 100 !important;
+}
+
+/* On mobile: shrink and fade floats so they don't cover forms */
+@media (max-width: 768px) {
+  .wa-float,
+  .chat-launcher,
+  .chat-bubble,
+  [class*="whatsapp-float"] {
+    transform: scale(0.8);
+    opacity: 0.7;
+    bottom: 12px !important;
+    right: 12px !important;
+  }
+  .wa-float:hover,
+  .chat-launcher:hover,
+  .chat-bubble:hover {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* When cookie banner is visible, push floats up */
+body.cookie-visible .wa-float,
+body.cookie-visible .chat-launcher,
+body.cookie-visible .chat-bubble {
+  bottom: 100px !important;
+}
+
+/* Prevent double floats on contact page */
+.contact-page .wa-float + .wa-float,
+body .wa-float ~ .chat-launcher .chat-bubble {
+  display: none !important;
+}
